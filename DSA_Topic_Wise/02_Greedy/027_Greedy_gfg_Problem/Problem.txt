@@ -1,0 +1,19 @@
+⭐Problem Link:https://www.geeksforgeeks.org/minimum-sum-product-two-arrays/
+Find the minimum sum of Products of two arrays of the same size, given that k modifications are allowed on the first array. In each modification, one array element of the first array can either be increased or decreased by 2.
+Examples: 
+
+Input : a[] = {1, 2, -3}
+        b[]  = {-2, 3, -5}
+           k = 5
+Output : -31
+Explanation:
+Here n = 3 and k = 5. 
+So, we modified a[2], which is -3 and 
+increased it by 10 (as 5 modifications 
+are allowed).
+Final sum will be :
+(1 * -2) + (2 * 3) + (7 * -5)
+   -2    +    6    -    35
+             -31
+(which is the minimum sum of the array 
+with given conditions)
