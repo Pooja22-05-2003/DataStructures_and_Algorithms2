@@ -2,7 +2,8 @@
 1. Sort both the arrays
 2. Add the corresponsing el absolute difference sum
 */
-
+#include <bits/stdc++.h>
+using namespace std;
     long long findMinSum(vector<int> &a,vector<int> &b,int n){
         sort(a.begin(), a.end());
         sort(b.begin(), b.end());
