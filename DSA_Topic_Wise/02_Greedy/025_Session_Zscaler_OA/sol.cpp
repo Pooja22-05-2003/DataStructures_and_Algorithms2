@@ -1,3 +1,13 @@
+/*
+1. First store all the el , with its index in the set, set will store value in ascending order.
+2.Then keep 1 visited array and pic the set el one by one, and if ind-1 and ind+1 is not visited of the current element, then mark it as visited
+3. Follow this for all set elemeent
+4. Finally return the ans.
+*/
+
+
+// TC=O(nlogn)
+// SC=O(n)
 #include <bits/stdc++.h>
 using namespace std;
 
