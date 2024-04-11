@@ -1,0 +1,5 @@
+Problem Link:https://www.desiqna.in/16076/zeta-oa-sde1-ctc-28-lac
+Docs Link:https://docs.google.com/document/d/1wWBtIsrGE4ro1OJbO7p8epoGICPLRQzEBtPDM6fZdTE/edit
+
+Understanding -> We are given “N” segments. “L” - “R” ; cost 
+You have to find pair {k1,k2} such that they don't overlap and their product is as minimal as possible. 
