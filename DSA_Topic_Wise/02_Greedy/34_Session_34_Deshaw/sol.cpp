@@ -1,3 +1,13 @@
+/*
+Organically brain says.-> that all the numbers which are absent we make a list of them in sorted order 
+
+-> What will be the next task 
+
+-> Put these number lists in the original array somehow. 
+
+-> The first number of our new array should be coming at first place of original array generally 
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

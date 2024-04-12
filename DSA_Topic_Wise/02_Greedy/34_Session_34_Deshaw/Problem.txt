@@ -1,0 +1,7 @@
+Problem Link:https://www.desiqna.in/16074/de-shaw-coding-oa-sde1-freshers-hiring-ctc-35-lac
+Docs Link:https://docs.google.com/document/d/1Dm1cJYXDO5Z5NUArt3eBuE6RHwcEzJKsbdoB1hemxc0/edit
+
+Understanding :-> We are given an array of size “N”; we want to change the minimum number of elements in the array such that the final array is permutation of numbers from 1 to N; what will be the minimum number operations. 
+
+Algorithm to find minimum number of operations:-> 
+Travel the array ; you have to change all the numbers which are > n and also remove the numbers which are <=n but having duplicates. 
