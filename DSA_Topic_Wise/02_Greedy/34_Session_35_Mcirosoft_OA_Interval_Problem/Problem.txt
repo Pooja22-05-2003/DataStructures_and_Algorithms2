@@ -1,0 +1,16 @@
+Problem Link:https://www.desiqna.in/8435/microsoft-oa-coding-questions-and-solutions-set-26-2022
+Docs Link:https://docs.google.com/document/d/1r4dDHUlP1YHRO6K66pUgk7LKTxW3b66mhlWMQ62bK7U/edit
+
+Understanding :-> You are given N - intervals ; find the number of ways to pick 3 intervals such that they are not touching each other 
+
+N = 
+{[1,3],
+[2,8],
+[5,10],
+[12,13]
+}
+
+Output :-> 1 ; there is 1 way to pick 3 intervals such that none of them touch ; that way is :-> [1,3]  ; [5,10] ; [12,13] 
+(Understanding is clear) 
+
+

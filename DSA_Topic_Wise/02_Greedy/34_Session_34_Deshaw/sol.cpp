@@ -1,3 +1,4 @@
+// Code Link:https://ideone.com/ZsRKyA
 /*
 Organically brain says.-> that all the numbers which are absent we make a list of them in sorted order 
 
