@@ -1,0 +1,8 @@
+Problem Link:https://desiqna.in/16982/amazon-oa-sde-ctc-45lpa-coding-questions-2024-set-158
+
+Docs Link:https://docs.google.com/document/d/1fceytryhHdMXhbazAY8Vg8OzSmPUvCE-OBxX7Fc-QLg/edit
+
+You are given an array of size “N” ; you are given a capacity of “k” ; 
+Each element can be reduced by at most k in 1 move. You are allowed to make maximum “d” moves. Find the minimum possible value of “k” 
+
+

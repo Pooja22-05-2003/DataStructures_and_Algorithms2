@@ -1,3 +1,11 @@
+/*
+TC - O(N*log(limit))
+
+Takes O(1) size.
+
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 bool check(int mid,vector<int> arr, int day)
