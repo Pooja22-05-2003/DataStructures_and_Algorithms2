@@ -100,5 +100,118 @@ WHERE NOT amount<=40000 OR amount>=60000
 
 
 -- // 2.5 // IN OPERATOR
+-- Here we can specify all queries within the bracket.
+SELECT *
+FROM employees 
+WHERE officeCode=1 OR  officeCode=2 OR officeCode=4;
+
+SELECT *
+FROM employees 
+WHERE officeCode in (1,2,4)
+ORDER BY officeCode;
+
+-- // NOT IN OPERATOR 
+
+SELECT *
+FROM employees 
+WHERE officeCode NOT IN (1,2,4)
+ORDER BY officeCode;
+
+-- // 2.6 // BETWEEN  OPERATOR
+
+SELECT *
+FROM customers
+WHERE creditLimit>=20000 AND creditLimit <=40000;
+
+-- Same statement as above using between
+SELECT *
+FROM customers
+WHERE creditLimit BETWEEN 20000 AND 40000;
+
+SELECT *
+FROM payments 
+WHERE paymentDate BETWEEN '2003-05-31' AND '2004-02-01';
+
+
+-- // 2.6 // LIKE OPERATOR
+-- Que: Find all the rows where the word 'sale ' is present in the job title.
+
+-- % operator will find 0 or more character before the term specified
+
+SELECT *
+FROM employees
+WHERE jobTitle LIKE "%Sale%";
+
+SELECT *
+FROM employees
+WHERE jobTitle LIKE "Sale%"; -- Now I will get only the rows, in which job Title has first 4 characters starting with Sale
+
+SELECT *
+FROM employees
+WHERE jobTitle LIKE "%Sale"; -- Now I will get only the rows, in which job Title has last 4 characters starting with Sale
+
+-- _(Underscore) operator will match only single characte
+--   _ _ e (It will search a word in which starting 2 characters can be anything but the 3rd character is fixed, whihc gonna be e.
+
+SELECT *
+FROM employees
+WHERE firstName LIKE "%e"; -- this will give all the names ending with e
+
+
+SELECT *
+FROM employees
+WHERE firstName LIKE "____e"; -- this will give all the names having starting 4 characters can be anything , but the fifth character must be e.
+
+
+-- // 2.6 // REGEX- Mainly used for Pattern/String Matching (Regex is a very Poerful Tool)
+-- Use in email Validation.
+
+-- REGEXP Operator:
+-- 1. ^ beginning of string
+-- 2. $ ending of the string
+-- 3. | logical or
+-- 4. [abcd]
+-- 5. [a-z]
+
+-- Query1 Search all the rows having "Sale" word anywhere in the JobTitle
+
+SELECT *
+FROM employees
+WHERE jobTitle REGEXP "Sale";
+
+-- 1. ^ beginning of string
+-- Query1 Search all the rows having "Sale"  as the starting word  in the JobTitle column.
+SELECT *
+FROM employees
+WHERE jobTitle REGEXP "^Sale";
+
+
+-- 2. $ ending of the string
+-- Query2 Search all the rows having "Rep"  as the ending word  in the JobTitle column.
+SELECT *
+FROM employees
+WHERE jobTitle REGEXP "Rep$";
+
+-- 3. | logical or
+-- Query3 Search all the rows where the firstName starting with a or b.
+
+SELECT *
+FROM employees
+WHERE firstname REGEXP ("^a|^b");
+
+-- 4. [abcd]
+-- Query3 Search all the rows where the firstName begins with characters ranges from [abcd]
+
+SELECT *
+FROM employees
+WHERE firstname REGEXP ("^[abcd]");
+
+
+-- 5. [a-d]
+-- Query3 Search all the rows where the firstName begins with characters ranges from [a-d]
+
+SELECT *
+FROM employees
+WHERE firstname REGEXP ("^[a-d]");
 
 
