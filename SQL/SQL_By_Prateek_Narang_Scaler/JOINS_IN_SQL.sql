@@ -83,3 +83,28 @@ ON payments.customerNumber=customers.customerNumber;
 SELECT p.customerNumber,checkNumber,paymentDate, amount,customerName
 FROM payments p,customers c 
 WHERE  p.customerNumber=c.customerNumber;
+
+
+
+
+-- -----------------------------
+-- 1. 3.2 OUTER JOINS
+-- -----------------------------
+
+
+-- ---------------------------------------------------------------------------------------------------------------------
+-- 1. LEFT JOINS [Left table have all the row, right table will have only those row, which are satisfying the condition.
+-- -----------------------------------------------------------------------------------------------------------------------
+SELECT c.customerNumber,customerName,o.orderNumber
+FROM customers c
+LEFT JOIN orders o
+	ON c.customerNumber=o.customerNumber;
+
+
+-- ---------------------------------------------------------------------------------------------------------------------
+-- 1. RIGHT  JOINS [Right table have all the row, left table will have only those row, which are satisfying the condition.
+-- -----------------------------------------------------------------------------------------------------------------------
+SELECT c.customerNumber,customerName,o.orderNumber
+FROM customers c
+RIGHT JOIN orders o
+	ON c.customerNumber=o.customerNumber;
