@@ -1,0 +1,162 @@
+
+// #include <iostream>
+
+// using namespace std;
+
+// class Student{
+//     public:
+//     string name;
+//     int roll_No;
+//     double cgpa;
+    
+    
+//     Student(string name , int roll_No,double cgpa)
+//     {
+//         this->name=name;
+//         this->roll_No=roll_No;
+//         this->cgpa=cgpa;
+//     }
+    
+//     void getinfo()
+//     {
+//         cout<<"Name:" <<name<<" roll_No:"<<roll_No<<" cgpa:"<<(this->cgpa)<<endl;
+//     }
+    
+//     // User defined copy constructor
+//     Student(Student &obj)
+//     {
+//         this->name=obj.name;
+//         this->roll_No=obj.roll_No;
+//         this->cgpa=obj.cgpa;
+//     }
+    
+    
+    
+// };
+// int main() {
+//     Student s1("Pooja",1,8.86);
+//     s1.getinfo();
+    
+//     Student s2(s1);
+    
+//     s2.getinfo();
+    
+//     s1.cgpa=9.6;
+    
+//     cout<<endl;
+//     cout<<"After the changes s1 and s2 info are following:"<<endl;
+//     cout<<endl;
+
+//     s1.getinfo();
+//     s2.getinfo();
+    
+    
+//     cout<<endl;
+// }
+
+// // This is shallow copy
+// // Output
+// // Name:Pooja roll_No:1 cgpa:8.86
+// // Name:Pooja roll_No:1 cgpa:8.86
+
+// // After the changes s1 and s2 info are following:
+
+// // Name:Pooja roll_No:1 cgpa:9.6
+// // Name:Pooja roll_No:1 cgpa:8.86
+
+
+
+
+
+// ---------------------------
+// 2. Deep Copy
+
+#include <iostream>
+
+using namespace std;
+
+class Student{
+    public:
+    string name;
+    int roll_No;
+    double *cgpa;// DYNAMIC MEMORY ALLOCATION
+    
+    
+    Student(string name , int roll_No,double cgpa)
+    {
+        this->name=name;
+        this->roll_No=roll_No;
+        this->cgpa= new double;// Memory allocated at the runtime in the heap memory
+        *(this->cgpa)=cgpa;
+    }
+    
+    void getinfo()
+    {
+        cout<<"Name:" <<name<<" roll_No:"<<roll_No<<" cgpa:"<<*(cgpa)<<endl;
+    }
+    
+    // User defined copy constructor
+    
+    // Shallow copy will not able to copy in the right way in case of dynnamic memory allocation
+    // Student(Student &obj)
+    // {
+    //     this->name=obj.name;
+    //     this->roll_No=obj.roll_No;
+    //     this->cgpa=obj.cgpa;
+    // }
+    
+    
+    // Deep copy will create a new adress  and create new address for deep copying 
+    Student (Student &obj)
+    {
+        this->name=obj.name;
+        this->roll_No=obj.roll_No;
+        
+        this->cgpa=new double;
+        *(this->cgpa)=*(obj.cgpa);
+    }
+    
+    
+};
+int main() {
+    Student s1("Pooja",1,8.86);
+    s1.getinfo();
+    
+    Student s2(s1);
+    
+    s2.getinfo();
+    
+    *(s1.cgpa)=9.6;
+    
+    cout<<endl;
+    cout<<"After the changes s1 and s2 info are following:"<<endl;
+    cout<<endl;
+
+    s1.getinfo();
+    s2.getinfo();
+    
+    
+    cout<<endl;
+}
+
+//2. Here Due to dynamic memory allocation , shallow copy will not work and changing the cgpa of 1 student will also
+// change the cgpa of the other student.
+
+// Name:Pooja roll_No:1 cgpa:0
+// Name:Pooja roll_No:1 cgpa:0
+
+// After the changes s1 and s2 info are following:
+
+// Name:Pooja roll_No:1 cgpa:9.6
+// Name:Pooja roll_No:1 cgpa:9.6
+
+
+
+// Output of Deep copy
+// Name:Pooja roll_No:1 cgpa:8.86
+// Name:Pooja roll_No:1 cgpa:8.86
+
+// After the changes s1 and s2 info are following:
+
+// Name:Pooja roll_No:1 cgpa:9.6
+// Name:Pooja roll_No:1 cgpa:8.86
